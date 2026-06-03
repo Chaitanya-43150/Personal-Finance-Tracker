@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import { Link } from "react-router-dom";
 
 function Register() {
@@ -20,8 +21,8 @@ function Register() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+      const res = await API.post(
+        "/auth/register",
         formData
       );
 
@@ -93,3 +94,4 @@ function Register() {
 }
 
 export default Register;
+
